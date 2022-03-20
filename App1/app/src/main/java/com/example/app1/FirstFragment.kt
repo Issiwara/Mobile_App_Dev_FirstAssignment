@@ -42,19 +42,22 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-           //val editText = binding.edittextId.editableText
-           // val user = userAPIService.getUser(editText.toString());
+           val editText = binding.inputtextid.editableText
+           val user = userApiService.getUser(editText.toString());
 
 
-            val user = userApiService.getUser("1");
+
+         //   val user = userApiService.getUser("1");
             user.enqueue(object : Callback<User> {
                 override fun onResponse(call: Call<User>, response: Response<User>) {
 
                     val body = response.body()
                     body?.let {
                         Log.i("FirstFragment", it.name)
-                        binding.textviewFirst.text = it.name
-                        binding.textviewFirst.text = it.email
+                        binding.textviewName.text = it.name
+                        binding.textviewEmail.text = it.email
+                        binding.textviewUsername.text=it.username;
+                        binding.textviewId.text= it.id.toString()
                     }
                 }
 
