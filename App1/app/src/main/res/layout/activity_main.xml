@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    >
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.App1.AppBarOverlay">
+        android:theme="@style/Theme.App1.AppBarOverlay"
+        tools:visibility="visible">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -18,7 +22,13 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/Theme.App1.PopupOverlay" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout><![CDATA[
+
+    /  android:background="@drawable/bg"
+        />
+
+
+    ]]>
 
     <include layout="@layout/content_main" />
 
